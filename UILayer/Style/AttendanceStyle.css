@@ -1,0 +1,65 @@
+﻿/* For Attendance Screen start */
+td
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+
+.simpletxtattencence {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	text-decoration: none;
+	padding-left:0px;
+	height:18px;
+}
+.simpletxtwhite {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	text-decoration: none;
+	padding-left:0px;
+	color:#ffffff;
+	
+}
+.linksattendence {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #000000;
+	text-align:left;
+	text-decoration: none;
+	padding-right:3px;
+}
+.linkswhite1 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #ffffff;
+	text-align:left;
+	text-decoration: none;
+	padding-right:3px;
+}
+.linkswhite {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #ffffff;
+	text-align:right;
+	text-decoration: none;
+	padding-right:3px;
+}
+#chkBoxAndSerialAva
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #ffffff;
+	text-align:right;
+	text-decoration: none;
+	padding-right:3px;
+}
+
+.simpletxt1 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	text-decoration: none;
+	padding-left:0px;
+	
+}
+
+/* For Attendance Screen end */

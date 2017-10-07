@@ -1,0 +1,706 @@
+
+body {
+    background: rgba(0, 0, 0, 0) url("../images/bg-home.jpg") repeat scroll center top;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    margin: 0;
+}
+.header {
+    height: 120px;
+    width: 1000px;
+}
+.header1 {
+    background: #03274B none repeat scroll 0 0;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: bold;
+    height: 24px;
+    padding-left: 5px;
+    text-decoration: none;
+}
+.header2 {
+    color: #000000;
+    font-size: 13px;
+    font-weight: bold;
+    height: 20px;
+    padding-left: 5px;
+    text-decoration: none;
+}
+.mainlogin {
+    padding-left: 80px;
+    width: 385px;
+}
+.userid_pass {
+    color: #333333;
+    font: 11px Verdana,Arial,Helvetica,sans-serif;
+    height: 28px;
+    padding-right: 3px;
+    text-align: right;
+}
+.txtbox {
+    color: #000000;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    height: 12px;
+    width: 140px;
+}
+.btn {
+    background: #329db4 none repeat scroll 0 0;
+    border: 1px solid #137c87;
+    color: #f7f7f7;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    font-weight: 200;
+    letter-spacing: 0.5px;
+    margin: 5px 0;
+    padding: 6px 18px;
+}
+nbox {
+    background: #e0e9ed none repeat scroll 0 0;
+    border: 1px solid #93a3ae;
+    color: #000000;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    font-weight: 200;
+    height: 15px;
+    letter-spacing: 0.5px;
+}
+.logout {
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: normal;
+    padding-right: 5px;
+    text-align: right;
+    text-decoration: none;
+}
+.forgotpassinred {
+    color: #ff8000;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    height: 12px;
+}
+.copyright {
+    background: #2e3d40 none repeat scroll 0 0;
+    color: #f7f7f7;
+    font-family: arial;
+    font-size: 11.5px;
+    padding: 20px 10px !important;
+    text-align: left;
+}
+.bigtxt {
+    color: #ff6600;
+    font-size: 13px;
+    font-weight: bold;
+    height: 20px;
+    padding-left: 5px;
+    text-decoration: none;
+}
+.logout:link {
+    color: #ffffff;
+    line-height: 18px;
+    text-decoration: none;
+}
+.logout:visited {
+    color: #ffffff;
+    line-height: 18px;
+    text-decoration: none;
+}
+.logout:hover {
+    color: #ffffff;
+    line-height: 18px;
+    text-decoration: none;
+}
+.links:link {
+    color: #000000;
+    font-size: 11px;
+    text-decoration: none;
+}
+.links:visited {
+    color: #000000;
+    font-size: 11px;
+    text-decoration: none;
+}
+.links:active {
+    color: #000000;
+    font-size: 11px;
+    text-decoration: none;
+}
+.links:hover {
+    color: #396870;
+    font-size: 11px;
+    text-decoration: none;
+}
+.tabs {
+    color: #000000;
+    font-size: 11px;
+    height: 22px;
+    padding-right: 10px;
+    text-align: right;
+    text-decoration: none;
+}
+.txtboxtxt {
+    background: #f4f4f4 none repeat scroll 0 0;
+    border: 1px solid #7f8e17;
+    color: #000000;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    height: 20px;
+    min-width: 150px;
+    padding-left: 3px;
+}
+.txtboxtxt1 {
+    background: #daf2fe none repeat scroll 0 0;
+    border: 1px solid #000000;
+    color: #000000;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    height: 14px;
+    padding-left: 3px;
+    width: 150px;
+}
+.txtboxtxt2 {
+    background: #f4f4f4 none repeat scroll 0 0;
+    border: 1px solid #7f8e17;
+    color: #000000;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    height: 20px;
+    width: 90px;
+    padding-left: 3px;
+}
+.plaintxt {
+    color: #666666;
+    font-size: 11px;
+    height: 20px;
+    padding-left: 10px;
+    text-decoration: none;
+}
+.question_heading {
+    color: #ff9900;
+    font-size: 12px;
+    font-weight: bold;
+    height: 20px;
+    padding-left: 2px;
+    text-decoration: none;
+}
+.fieldName {
+    background: #cedd66 none repeat scroll 0 0;
+    color: #000000;
+    font-size: 11px;
+    font-weight: normal;
+    line-height: 20px;
+    padding-left: 3px;
+}
+.fieldNamewithbgcolor {
+    background: #94a80c none repeat scroll 0 0;
+    color: #000000;
+    font-size: 11px;
+    font-weight: normal;
+    line-height: 20px;
+    padding-left: 3px;
+}
+.gridbgcolor {
+    background: #f0f0f3 none repeat scroll 0 0;
+    color: #1c3d74;
+    font-size: 11px;
+    font-weight: normal;
+    line-height: 20px;
+    padding-left: 3px;
+}
+.dropdown {
+    background: #f4f4f4 none repeat scroll 0 0;
+    border: 1px solid #7f8e17;
+    color: #000000;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    height: 20px;
+    padding-bottom: 3px;
+    padding-left: 3px;
+    width: 156px;
+}
+.dropdownnormal {
+    background: #ecf0ff none repeat scroll 0 0;
+    color: #000000;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    height: 20px;
+    padding-left: 5px;
+}
+.btn1 {
+    background: rgba(0, 0, 0, 0) url("../small_sym/bg.jpg") repeat scroll 0 0;
+    border: 1px solid #0066cc;
+    color: #000000;
+    font-family: verdana,Helvetica,sans-serif;
+    font-size: 11px;
+    font-weight: 200;
+    height: 18px;
+    letter-spacing: 0.5px;
+    padding-left: 2px;
+}
+.txtpadding {
+    padding-left: 3px;
+}
+.bottom {
+    background: #e6e6e6 none repeat scroll 0 0;
+    border: 1px solid #60a3ac;
+    color: #000000;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    height: 28px;
+    padding-left: 3px;
+    text-align: center;
+}
+.scoresheetheader {
+    background: #ffcc66 none repeat scroll 0 0;
+    color: #000000;
+    font-size: 11px;
+    font-weight: bold;
+    height: 18px;
+    padding-left: 2px;
+    padding-top: 2px;
+}
+.scoresheettabs {
+    color: #999999;
+    font-size: 11px;
+    font-weight: bold;
+    height: 20px;
+    padding-right: 5px;
+    text-align: right;
+    text-decoration: none;
+}
+.bgcolorwhite {
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 11px;
+    text-align: center;
+}
+.topUser {
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    text-decoration: none;
+}
+.menustatic {
+    color: #ffffff;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    padding-left: 10px;
+    padding-right: 0;
+}
+.menustatichover {
+    color: #ffffff;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    padding-left: 10px;
+    padding-right: 0;
+}
+.menudynamic {
+    background-color: #5880c5;
+    border-top: 1px solid #ffffff;
+    color: #ffffff;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    height: 22px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.menudynamichover {
+    background-color: #d8e2e9;
+    border-left: 4px solid #ff8000;
+    color: #000000;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    height: 22px;
+}
+#dv a:link {
+    color: #000000;
+    line-height: 18px;
+    text-decoration: underline;
+}
+#dv a:visited {
+    color: #396870;
+    line-height: 18px;
+    text-decoration: underline;
+}
+#dv a:hover {
+    color: #b96100;
+    line-height: 18px;
+    text-decoration: none;
+}
+.headingred {
+    color: #2454a6;
+    font-family: arial;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding-bottom: 8px;
+    padding-left: 5px;
+    text-decoration: none;
+}
+.bgcolorcomm {
+    background-color: #e2e2e2;
+    border: 1px dotted #5a8398;
+    padding: 10px;
+}
+.simpletxt1 {
+    background: #f4f4f4 none repeat scroll 0 0;
+    color: #000000;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    height: 20px;
+    padding-left: 5px;
+    width: 158px;
+}
+.linkbar {
+    background: #0483c2 none repeat scroll 0 0;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: bold;
+    height: 25px;
+    padding-left: 10px;
+    text-align: left;
+    text-decoration: none;
+}
+.txtboxtxtaddress_big1 {
+    background: #f4f4f4 none repeat scroll 0 0;
+    border: 1px solid #60a3ac;
+    color: #000000;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    height: 60px;
+    padding-left: 3px;
+    width: 280px;
+}
+.MsgTotalCount {
+    color: #7c1618;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    padding-left: 5px;
+    text-decoration: none;
+    vertical-align: bottom;
+}
+.MsgTDCount {
+    color: #000000;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    padding-left: 5px;
+    text-decoration: none;
+    vertical-align: bottom;
+}
+.PopTr {
+    background-color: #ffffff;
+}
+.marquee {
+    color: #0066cc;
+    font-family: Trebuchet MS;
+    font-size: 12px;
+    font-weight: bold;
+}
+.custName {
+    color: #000000;
+    font-family: Arial,Verdana,Helvetica,sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 22px;
+    text-decoration: none;
+}
+.watermark {
+    background: #ffaaff none repeat scroll 0 0;
+}
+.popupControl {
+    background-color: #aad4ff;
+    border-color: Black;
+    border-style: solid;
+    border-width: 2px;
+    position: absolute;
+    visibility: hidden;
+}
+.modalBackground {
+    background-color: Gray;
+    opacity: 0.7;
+}
+.modalPopup {
+    background-color: #f0f0f3;
+    border-color: Gray;
+    border-style: solid;
+    border-width: 3px;
+    padding: 3px;
+    width: 250px;
+}
+.headingred1 {
+    color: #80000d;
+    font-family: "Trebuchet MS",Verdana,Arial,Helvetica,sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.lbl {
+    color: #000000;
+    font-weight: bold;
+}
+.floatleft {
+    float: left;
+    margin-left: 5px;
+}
+.floatleftWithoutMargin {
+    float: left;
+}
+.txtboxtxtSmall {
+    background: #f4f4f4 none repeat scroll 0 0;
+    border: 1px solid #60a3ac;
+    color: #000000;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    height: 18px;
+    padding-left: 1px;
+    width: 60px;
+}
+.btnDivShow {
+    float: left;
+    margin-left: 50px;
+    padding-left: 150px;
+}
+.btnDivShowOrder {
+    float: left;
+    margin-left: 350px;
+    width: 150px;
+}
+.DashBoardPrimeTable {
+    vertical-align: middle;
+    width: 100%;
+}
+.AddressText {
+    color: #000000;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 13px;
+    font-weight: lighter;
+    height: 20px;
+    margin-top: 2px;
+    padding-left: 5px;
+}
+.TopImage {
+    background-image: url("../Images/top_bd.jpg");
+    height: 20px;
+    padding-left: 5px;
+    width: 260px;
+}
+.MidImage {
+    background-image: url("../Images/box_ng.jpg");
+    height: 100px;
+    padding-left: 5px;
+    width: 260px;
+}
+.BottomImage {
+    background-image: url("../Images/bottom_db.jpg");
+    height: 10px;
+    padding-left: 5px;
+    width: 260px;
+}
+.textRed {
+    color: #ff0000;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+}
+.textBlue {
+    color: #a52a2a;
+    cursor: pointer;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+}
+.cal_Theme1 .ajax__calendar_container {
+    background-color: #def1f4;
+    border: 1px solid #77d5f7;
+}
+.cal_Theme1 .ajax__calendar_header {
+    background-color: #ffffff;
+    margin-bottom: 4px;
+}
+.cal_Theme1 .ajax__calendar_title, .cal_Theme1 .ajax__calendar_next, .cal_Theme1 .ajax__calendar_prev {
+    color: #004080;
+    padding-top: 3px;
+}
+.cal_Theme1 .ajax__calendar_body {
+    background-color: #ffffff;
+    border: 1px solid #77d5f7;
+}
+.cal_Theme1 .ajax__calendar_dayname {
+    color: #004080;
+    font-weight: bold;
+    margin-bottom: 4px;
+    margin-top: 2px;
+    text-align: center;
+}
+.cal_Theme1 .ajax__calendar_day {
+    color: #004080;
+    text-align: center;
+}
+.cal_Theme1 .ajax__calendar_hover .ajax__calendar_day, .cal_Theme1 .ajax__calendar_hover .ajax__calendar_month, .cal_Theme1 .ajax__calendar_hover .ajax__calendar_year, .cal_Theme1 .ajax__calendar_active {
+    background-color: #def1f4;
+    color: #004080;
+    font-weight: bold;
+}
+.cal_Theme1 .ajax__calendar_today {
+    font-weight: bold;
+}
+.cal_Theme1 .ajax__calendar_other, .cal_Theme1 .ajax__calendar_hover .ajax__calendar_today, .cal_Theme1 .ajax__calendar_hover .ajax__calendar_title {
+    color: #bbbbbb;
+}
+.calander {
+    background-image: url("../HRP/Images/calendar.gif");
+    height: 15px;
+    width: 15px;
+}
+table tr th, table tr th a {
+    border: 1px solid rgb(0, 0, 0);
+    color: #f6f6f6;
+    font-family: arial;
+    font-size: 13px;
+    padding: 5px 10px;
+}
+table tr td a {
+}
+#TopMenu a.popout-dynamic {
+    background: #5880c5 none repeat scroll 0 0 !important;
+}
+div#TopMenu ul.level1 li.has-popup.static {
+    padding: 5px 10px;
+}
+#TopMenu ul.dynamic {
+    border-top: 3px solid #a1cb10;
+    margin-top: 0 !important;
+}
+#TopMenu ul li a {
+    padding: 5px 10px;
+}
+#TopMenu ul li a:hover {
+    color: #d8fc5b;
+}
+li.static {
+    padding: 5px 10px;
+}
+.homebody {
+    background: rgba(0, 0, 0, 0) url("../images/bg-home.jpg") repeat scroll center top;
+}
+.login-box {
+    background: rgba(0, 0, 0, 0) url("../images/bg_log.png") repeat scroll center top;
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
+    margin: 0 auto 3px;
+}
+.head-content {
+    color: #fff;
+    font-family: oswald;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+}
+.TAC {
+    text-align: center;
+}
+.logo-home {
+    border-radius: 2px;
+    width: 45%;
+}
+.lable_login {
+    color: #fff;
+    font-family: "Roboto",sans-serif;
+    font-size: 14px;
+}
+.label-warning-login {
+    padding: 0 30px;
+}
+.newlogin {
+    background: transparent none repeat scroll 0 0;
+    color: #fff;
+    margin-left: 30px;
+    width: 300px;
+}
+.MarLeft30 {
+    margin-left: 30px;
+}
+.forgot-pass-login {
+    color: #fff;
+    font-family: Roboto;
+    font-size: 12px;
+    margin-right: 36px;
+    text-decoration: none;
+}
+.forgot-pass-div {
+    padding-top: 1px;
+    text-align: right;
+}
+.MarBot50 {
+    margin-bottom: 50px;
+}
+.copyright-login {
+    background: transparent none repeat scroll 0 0;
+    color: #fff;
+    font-family: roboto;
+    font-size: 13px;
+    padding: 0 10px;
+    text-align: left;
+    text-transform: capitalize;
+}
+.copyright a {
+    color: #fff;
+}
+.NoBorder {
+    border: medium none;
+}
+td {
+    padding-bottom: 2px !important;
+    padding-top: 2px !important;
+}
+.headingred {
+    padding-left: 0;
+}
+#MainConHolder_btnPinGeneration {
+    float: left;
+}
+.search-btn-member {
+    float: right;
+    margin: 5px 0;
+    width: 50%;
+}
+.search-btn-mbr {
+    float: right;
+    margin: 0;
+    width: 148px;
+}
+.search-label {
+    margin-bottom: 20px;
+    margin-top: 15px;
+}
+.search-txtbox {
+    margin-bottom: 20px;
+    margin-top: 12px;
+}
+.full-width {
+    width: 100%;
+    border: solid 1px;
+}
+.royalty-box {
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    float: left;
+    padding: 10px 5px;
+}
+.margin10 {
+    margin: 3px 0;
+}
+.head-h3 {
+    font-size: 17px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.font14 {
+    font-size: 14px;
+    font-weight: bold;
+}

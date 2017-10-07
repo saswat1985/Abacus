@@ -1,0 +1,140 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <script src="Scripts/jquery-1.4.1.min.js" type="text/javascript"></script>
+    <link href="Style/layout.css" rel="stylesheet" type="text/css" />
+    <link href="Style/navi.css" rel="stylesheet" type="text/css" />
+    <link href="Style/contentPageStyle.css" rel="stylesheet" type="text/css" />
+    <link href="Style/mbook.css" rel="stylesheet" type="text/css" />
+    
+    <%--<script src="Scripts/UserMgmt.js" type="text/javascript"></script>--%>
+    <script src="Scripts/userMgmt.min.js" type="text/javascript"></script>
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .accordionHeader
+        {
+            border: 1px solid #2F4F4F;
+            color: white;
+            background-color: #5A8398;
+            font-family: Arial, Sans-Serif;
+            font-size: 12px;
+            font-weight: bold;
+            margin-top: 5px;
+            cursor: pointer;
+        }
+        .accordionContent
+        {
+            background-color: #E2E2E2;
+            border: 1px dashed #2F4F4F;
+            border-top: none;
+            padding-top: 10px;
+        }
+        .accordionLink
+        {
+            background-color: #D3DEEF;
+        }
+        .accordionHeaderSelected
+        {
+            border: 1px dotted #5A8398;
+            background-color: #A2BBC8;
+            cursor: pointer;
+        }
+        .hiddencol
+        {
+            display: none;
+        }
+        .viscol
+        {
+            display: block;
+        }
+        .style1
+        {
+            height: 17px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true">
+    </asp:ScriptManager>
+    <div>
+        <div class="wrapper row1">
+            <div id="header" class="clear">
+                <div class="fl_left">
+                    <h1>
+                        <a href="Default.aspx">EDC Tool</a></h1>
+                    <p>
+                        Electrnic Data Exchange</p>
+                </div>
+            </div>
+        </div>
+        <div class="wrapper row2">
+            <table width="932" border="0" align="center" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td colspan="4" height="1" style="text-align: right;">
+                        <b><span style="text-align: right; color: #ffffff">Welcome:</span>
+                            <asp:Label ID="lblWelcome" runat="server" Style="color: #ffffff; text-align: right;"></asp:Label></b>
+                    </td>
+                </tr>
+                <tr class="header1">
+                    <td width="60" align="center">
+                        <a class="logout" href="Default.aspx">Home </a>
+                    </td>
+                    <td width="890">
+                        <asp:UpdatePanel ID="UpDatePnlLeftMenu" runat="server" UpdateMode="Conditional">
+                            <ContentTemplate>
+                                <div style="width: 100%">
+                                    <asp:Menu ID="TopMenu" Orientation="Horizontal" runat="server" DynamicHorizontalOffset="0"
+                                        DynamicVerticalOffset="4" BorderStyle="None" StaticEnableDefaultPopOutImage="false"
+                                        MaximumDynamicDisplayLevels="4" StaticDisplayLevels="1" OnMenuItemClick="TopMenu_MenuItemClick"
+                                        StaticMenuItemStyle-CssClass="menustatic" StaticHoverStyle-CssClass="menustatichover"
+                                        DynamicMenuItemStyle-CssClass="menudynamic" DynamicHoverStyle-CssClass="menudynamichover">
+                                    </asp:Menu>
+                                </div>
+                            </ContentTemplate>
+                            <Triggers>
+                                <asp:AsyncPostBackTrigger ControlID="TopMenu" EventName="MenuItemClick" />
+                            </Triggers>
+                        </asp:UpdatePanel>
+                        <%--<a class="logout" href="../Admin/DepartmentMaster.aspx" runat="server" id="A1">
+                        Department Master</a>--%>
+                    </td>
+                    <td width="50" align="center">
+                        <asp:LinkButton ID="LnkBtn" runat="server" CssClass="logout" OnClick="LnkBtn_Click">Logout</asp:LinkButton>
+                        <%--<asp:LoginStatus LogoutText="Logout" CssClass="logout" ID="LoginStatus1" runat="server"
+                        OnLoggingOut="LoginStatus1_LoggingOut" LoginText="Logout"></asp:LoginStatus>--%>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4" height="1" bgcolor="#ffffff">
+                    </td>
+                </tr>
+            </table>
+            <%-- <div id="topnav">
+                <ul>
+                    <li class="active"><a href="Default.aspx">Homepage</a></li>
+                    <li><a href="CreateUser.aspx">Create User</a></li>
+                    <li><a href="#">Full Width</a></li>
+                    <li><a href="#">DropDown</a> </li>
+                    <li><a href="ChangePassword.aspx">Change Password</a></li>
+                   
+                </ul>
+                <div class="clear">
+                </div>
+            </div>--%>
+        </div>
+        <div class="wrapper row4">
+            <div id="container">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+    </div>
+    </form>
+</body>
+</html>

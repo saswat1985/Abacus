@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ImageDataDBModelStoreContainer" CdmEntityContainer="ImageDataDBEntities">
+    <EntitySetMapping Name="aspnet_Roles">
+      <EntityTypeMapping TypeName="ImageDataDBModel.aspnet_Roles">
+        <MappingFragment StoreEntitySet="aspnet_Roles">
+          <ScalarProperty Name="UserAffectedDate" ColumnName="UserAffectedDate" />
+          <ScalarProperty Name="UserEntryDate" ColumnName="UserEntryDate" />
+          <ScalarProperty Name="UserEntryID" ColumnName="UserEntryID" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="aspnet_UsersInRoles">
+      <EntityTypeMapping TypeName="ImageDataDBModel.aspnet_UsersInRoles">
+        <MappingFragment StoreEntitySet="aspnet_UsersInRoles">
+          <ScalarProperty Name="UserEffectedDate" ColumnName="UserEffectedDate" />
+          <ScalarProperty Name="UserEntryDate" ColumnName="UserEntryDate" />
+          <ScalarProperty Name="UserEntryID" ColumnName="UserEntryID" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="PkID" ColumnName="PkID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExportToImages">
+      <EntityTypeMapping TypeName="ImageDataDBModel.ExportToImage">
+        <MappingFragment StoreEntitySet="ExportToImage">
+          <ScalarProperty Name="ConvertFilepath" ColumnName="ConvertFilepath" />
+          <ScalarProperty Name="ConvertBy" ColumnName="ConvertBy" />
+          <ScalarProperty Name="ConvertDate" ColumnName="ConvertDate" />
+          <ScalarProperty Name="RefrenceId" ColumnName="RefrenceId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MstLanguages">
+      <EntityTypeMapping TypeName="ImageDataDBModel.MstLanguage">
+        <MappingFragment StoreEntitySet="MstLanguage">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="LanguageCode" ColumnName="LanguageCode" />
+          <ScalarProperty Name="LanguageName" ColumnName="LanguageName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblIPMasters">
+      <EntityTypeMapping TypeName="ImageDataDBModel.tblIPMaster">
+        <MappingFragment StoreEntitySet="tblIPMaster">
+          <ScalarProperty Name="UserEffectedDate" ColumnName="UserEffectedDate" />
+          <ScalarProperty Name="UserEntryDate" ColumnName="UserEntryDate" />
+          <ScalarProperty Name="UserEntryId" ColumnName="UserEntryId" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblMstUserMasters">
+      <EntityTypeMapping TypeName="ImageDataDBModel.tblMstUserMaster">
+        <MappingFragment StoreEntitySet="tblMstUserMaster">
+          <ScalarProperty Name="UserEffectedDate" ColumnName="UserEffectedDate" />
+          <ScalarProperty Name="UserEntryDate" ColumnName="UserEntryDate" />
+          <ScalarProperty Name="UserEntryId" ColumnName="UserEntryId" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IPAllowed" ColumnName="IPAllowed" />
+          <ScalarProperty Name="Language" ColumnName="Language" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserCode" ColumnName="UserCode" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblMstUserLoginDetails">
+      <EntityTypeMapping TypeName="ImageDataDBModel.tblMstUserLoginDetail">
+        <MappingFragment StoreEntitySet="tblMstUserLoginDetail">
+          <ScalarProperty Name="LogoutTime" ColumnName="LogoutTime" />
+          <ScalarProperty Name="LoginTime" ColumnName="LoginTime" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+          <ScalarProperty Name="BrowserType" ColumnName="BrowserType" />
+          <ScalarProperty Name="AuthId" ColumnName="AuthId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExportDataMasters">
+      <EntityTypeMapping TypeName="ImageDataDBModel.ExportDataMaster">
+        <MappingFragment StoreEntitySet="ExportDataMaster">
+          <ScalarProperty Name="IsConverted" ColumnName="IsConverted" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="UploadPath" ColumnName="UploadPath" />
+          <ScalarProperty Name="UploadBy" ColumnName="UploadBy" />
+          <ScalarProperty Name="UploadDate" ColumnName="UploadDate" />
+          <ScalarProperty Name="FileCode" ColumnName="FileCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExportDataDetails">
+      <EntityTypeMapping TypeName="ImageDataDBModel.ExportDataDetail">
+        <MappingFragment StoreEntitySet="ExportDataDetail">
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="total" ColumnName="total" />
+          <ScalarProperty Name="shippingcost" ColumnName="shippingcost" />
+          <ScalarProperty Name="cost" ColumnName="cost" />
+          <ScalarProperty Name="pillrate" ColumnName="pillrate" />
+          <ScalarProperty Name="tablets" ColumnName="tablets" />
+          <ScalarProperty Name="dosage" ColumnName="dosage" />
+          <ScalarProperty Name="medicine" ColumnName="medicine" />
+          <ScalarProperty Name="cardname" ColumnName="cardname" />
+          <ScalarProperty Name="sex2" ColumnName="sex2" />
+          <ScalarProperty Name="dob" ColumnName="dob" />
+          <ScalarProperty Name="stmcode" ColumnName="stmcode" />
+          <ScalarProperty Name="stmname" ColumnName="stmname" />
+          <ScalarProperty Name="pholder" ColumnName="pholder" />
+          <ScalarProperty Name="pinst" ColumnName="pinst" />
+          <ScalarProperty Name="lifeassure" ColumnName="lifeassure" />
+          <ScalarProperty Name="policy" ColumnName="policy" />
+          <ScalarProperty Name="allergiesd" ColumnName="allergiesd" />
+          <ScalarProperty Name="diabetic" ColumnName="diabetic" />
+          <ScalarProperty Name="pastsurg" ColumnName="pastsurg" />
+          <ScalarProperty Name="smoker" ColumnName="smoker" />
+          <ScalarProperty Name="alcoholic" ColumnName="alcoholic" />
+          <ScalarProperty Name="phone2" ColumnName="phone2" />
+          <ScalarProperty Name="LOWER" ColumnName="LOWER" />
+          <ScalarProperty Name="country2" ColumnName="country2" />
+          <ScalarProperty Name="zip2" ColumnName="zip2" />
+          <ScalarProperty Name="state2" ColumnName="state2" />
+          <ScalarProperty Name="city2" ColumnName="city2" />
+          <ScalarProperty Name="shippername" ColumnName="shippername" />
+          <ScalarProperty Name="billingname" ColumnName="billingname" />
+          <ScalarProperty Name="bloodgroup" ColumnName="bloodgroup" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+          <ScalarProperty Name="height" ColumnName="height" />
+          <ScalarProperty Name="dbirth1" ColumnName="dbirth1" />
+          <ScalarProperty Name="sex1" ColumnName="sex1" />
+          <ScalarProperty Name="UPPER" ColumnName="UPPER" />
+          <ScalarProperty Name="country1" ColumnName="country1" />
+          <ScalarProperty Name="phonenumber1" ColumnName="phonenumber1" />
+          <ScalarProperty Name="zip1" ColumnName="zip1" />
+          <ScalarProperty Name="state1" ColumnName="state1" />
+          <ScalarProperty Name="city1" ColumnName="city1" />
+          <ScalarProperty Name="resaddress" ColumnName="resaddress" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="customername" ColumnName="customername" />
+          <ScalarProperty Name="recordnumber" ColumnName="recordnumber" />
+          <ScalarProperty Name="masterId" ColumnName="masterId" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

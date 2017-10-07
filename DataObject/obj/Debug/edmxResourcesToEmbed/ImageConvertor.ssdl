@@ -1,0 +1,309 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ImageDataDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="ImageDataDBModelStoreContainer">
+    <EntitySet Name="aspnet_Roles" EntityType="ImageDataDBModel.Store.aspnet_Roles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="aspnet_UsersInRoles" EntityType="ImageDataDBModel.Store.aspnet_UsersInRoles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ExportDataDetail" EntityType="ImageDataDBModel.Store.ExportDataDetail" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ExportDataMaster" EntityType="ImageDataDBModel.Store.ExportDataMaster" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ExportToImage" EntityType="ImageDataDBModel.Store.ExportToImage" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MstLanguage" EntityType="ImageDataDBModel.Store.MstLanguage" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MstMenuMaster" EntityType="ImageDataDBModel.Store.MstMenuMaster" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MstMenuRoleMaster" EntityType="ImageDataDBModel.Store.MstMenuRoleMaster" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tblIPMaster" EntityType="ImageDataDBModel.Store.tblIPMaster" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tblMstUserDetail" EntityType="ImageDataDBModel.Store.tblMstUserDetail" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tblMstUserLoginDetail" EntityType="ImageDataDBModel.Store.tblMstUserLoginDetail" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tblMstUserMaster" EntityType="ImageDataDBModel.Store.tblMstUserMaster" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_aspnet_UsersInRoles_aspnet_Roles" Association="ImageDataDBModel.Store.FK_aspnet_UsersInRoles_aspnet_Roles">
+      <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+      <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_aspnet_UsersInRoles_tblMstUserMaster" Association="ImageDataDBModel.Store.FK_aspnet_UsersInRoles_tblMstUserMaster">
+      <End Role="tblMstUserMaster" EntitySet="tblMstUserMaster" />
+      <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MstMenuRoleMaster_aspnet_Roles" Association="ImageDataDBModel.Store.FK_MstMenuRoleMaster_aspnet_Roles">
+      <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+      <End Role="MstMenuRoleMaster" EntitySet="MstMenuRoleMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblMstUserLoginDetail_tblMstUserMaster" Association="ImageDataDBModel.Store.FK_tblMstUserLoginDetail_tblMstUserMaster">
+      <End Role="tblMstUserMaster" EntitySet="tblMstUserMaster" />
+      <End Role="tblMstUserLoginDetail" EntitySet="tblMstUserLoginDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblMstUserMaster_MstLanguage" Association="ImageDataDBModel.Store.FK_tblMstUserMaster_MstLanguage">
+      <End Role="MstLanguage" EntitySet="MstLanguage" />
+      <End Role="tblMstUserMaster" EntitySet="tblMstUserMaster" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="aspnet_Roles">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RoleName" Type="nvarchar" Nullable="false" MaxLength="256" />
+    <Property Name="Description" Type="nvarchar" MaxLength="256" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="UserEntryID" Type="int" />
+    <Property Name="UserEntryDate" Type="datetime" />
+    <Property Name="UserAffectedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="aspnet_UsersInRoles">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="PkID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="RoleId" Type="int" Nullable="false" />
+    <Property Name="UserEntryID" Type="int" />
+    <Property Name="UserEntryDate" Type="datetime" />
+    <Property Name="UserEffectedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ExportDataDetail">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="masterId" Type="int" />
+    <Property Name="recordnumber" Type="int" />
+    <Property Name="customername" Type="nvarchar(max)" />
+    <Property Name="email" Type="nvarchar(max)" />
+    <Property Name="resaddress" Type="nvarchar(max)" />
+    <Property Name="city1" Type="nvarchar(max)" />
+    <Property Name="state1" Type="nvarchar(max)" />
+    <Property Name="zip1" Type="nvarchar(max)" />
+    <Property Name="phonenumber1" Type="nvarchar(max)" />
+    <Property Name="country1" Type="nvarchar(max)" />
+    <Property Name="UPPER" Type="nvarchar(max)" />
+    <Property Name="sex1" Type="nvarchar(max)" />
+    <Property Name="dbirth1" Type="nvarchar(max)" />
+    <Property Name="height" Type="nvarchar(max)" />
+    <Property Name="weight" Type="nvarchar(max)" />
+    <Property Name="bloodgroup" Type="nvarchar(max)" />
+    <Property Name="billingname" Type="nvarchar(max)" />
+    <Property Name="shippername" Type="nvarchar(max)" />
+    <Property Name="city2" Type="nvarchar(max)" />
+    <Property Name="state2" Type="nvarchar(max)" />
+    <Property Name="zip2" Type="nvarchar(max)" />
+    <Property Name="country2" Type="nvarchar(max)" />
+    <Property Name="LOWER" Type="nvarchar(max)" />
+    <Property Name="phone2" Type="nvarchar(max)" />
+    <Property Name="alcoholic" Type="nvarchar(max)" />
+    <Property Name="smoker" Type="nvarchar(max)" />
+    <Property Name="pastsurg" Type="nvarchar(max)" />
+    <Property Name="diabetic" Type="nvarchar(max)" />
+    <Property Name="allergiesd" Type="nvarchar(max)" />
+    <Property Name="policy" Type="nvarchar(max)" />
+    <Property Name="lifeassure" Type="nvarchar(max)" />
+    <Property Name="pinst" Type="nvarchar(max)" />
+    <Property Name="pholder" Type="nvarchar(max)" />
+    <Property Name="stmname" Type="nvarchar(max)" />
+    <Property Name="stmcode" Type="nvarchar(max)" />
+    <Property Name="dob" Type="nvarchar(max)" />
+    <Property Name="sex2" Type="nvarchar(max)" />
+    <Property Name="cardname" Type="nvarchar(max)" />
+    <Property Name="medicine" Type="nvarchar(max)" />
+    <Property Name="dosage" Type="nvarchar(max)" />
+    <Property Name="tablets" Type="nvarchar(max)" />
+    <Property Name="pillrate" Type="nvarchar(max)" />
+    <Property Name="cost" Type="nvarchar(max)" />
+    <Property Name="shippingcost" Type="nvarchar(max)" />
+    <Property Name="total" Type="nvarchar(max)" />
+    <Property Name="remark" Type="nvarchar(max)" />
+    <Property Name="value1" Type="nvarchar(max)" />
+    <Property Name="value2" Type="nvarchar(max)" />
+    <Property Name="value3" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="ExportDataMaster">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FileCode" Type="nvarchar(max)" />
+    <Property Name="ImageType" Type="int" />
+    <Property Name="UploadDate" Type="datetime" />
+    <Property Name="UploadBy" Type="int" />
+    <Property Name="UploadPath" Type="nvarchar(max)" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="IsConverted" Type="bit" />
+  </EntityType>
+  <EntityType Name="ExportToImage">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RefrenceId" Type="int" />
+    <Property Name="ConvertDate" Type="datetime" />
+    <Property Name="ConvertBy" Type="int" />
+    <Property Name="ConvertFilepath" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="MstLanguage">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="LanguageName" Type="nvarchar" MaxLength="100" />
+    <Property Name="LanguageCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsActive" Type="bit" />
+  </EntityType>
+  <EntityType Name="MstMenuMaster">
+    <Key>
+      <PropertyRef Name="MenuId" />
+    </Key>
+    <Property Name="MenuId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MenuText" Type="varchar" MaxLength="100" />
+    <Property Name="MenuDesc" Type="varchar" MaxLength="100" />
+    <Property Name="NavigateURL" Type="varchar" MaxLength="256" />
+    <Property Name="ParentID" Type="int" />
+    <Property Name="OrderNo" Type="int" />
+    <Property Name="ApplicationID" Type="int" />
+    <Property Name="UserEntryID" Type="int" />
+    <Property Name="UserEntryDate" Type="datetime" />
+    <Property Name="UserAffectedDate" Type="datetime" />
+    <Property Name="IsActive" Type="bit" />
+  </EntityType>
+  <EntityType Name="MstMenuRoleMaster">
+    <Key>
+      <PropertyRef Name="MR_SNo" />
+    </Key>
+    <Property Name="MR_SNo" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MM_MenuId" Type="int" />
+    <Property Name="AR_RoleId" Type="int" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="50" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="Active_Flag" Type="bit" />
+  </EntityType>
+  <EntityType Name="tblIPMaster">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="IPAddress" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="UserEntryId" Type="int" />
+    <Property Name="UserEntryDate" Type="datetime" />
+    <Property Name="UserEffectedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblMstUserDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="500" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="500" />
+    <Property Name="EmailId" Type="nvarchar(max)" />
+    <Property Name="ContactNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="IPAllowed" Type="int" />
+    <Property Name="UserEntryDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblMstUserLoginDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="AuthId" Type="uniqueidentifier" />
+    <Property Name="BrowserType" Type="nvarchar" MaxLength="500" />
+    <Property Name="IPAddress" Type="nvarchar" MaxLength="50" />
+    <Property Name="CityName" Type="nvarchar(max)" />
+    <Property Name="Latitude" Type="nvarchar" MaxLength="50" />
+    <Property Name="Longitude" Type="nvarchar" MaxLength="50" />
+    <Property Name="LoginTime" Type="datetime" />
+    <Property Name="LogoutTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblMstUserMaster">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserCode" Type="varchar" MaxLength="50" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" MaxLength="100" />
+    <Property Name="Language" Type="int" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="UserEntryId" Type="int" />
+    <Property Name="UserEntryDate" Type="datetime" />
+    <Property Name="UserEffectedDate" Type="datetime" />
+  </EntityType>
+  <Association Name="FK_aspnet_UsersInRoles_aspnet_Roles">
+    <End Role="aspnet_Roles" Type="ImageDataDBModel.Store.aspnet_Roles" Multiplicity="1" />
+    <End Role="aspnet_UsersInRoles" Type="ImageDataDBModel.Store.aspnet_UsersInRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Roles">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="aspnet_UsersInRoles">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_aspnet_UsersInRoles_tblMstUserMaster">
+    <End Role="tblMstUserMaster" Type="ImageDataDBModel.Store.tblMstUserMaster" Multiplicity="1" />
+    <End Role="aspnet_UsersInRoles" Type="ImageDataDBModel.Store.aspnet_UsersInRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblMstUserMaster">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="aspnet_UsersInRoles">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MstMenuRoleMaster_aspnet_Roles">
+    <End Role="aspnet_Roles" Type="ImageDataDBModel.Store.aspnet_Roles" Multiplicity="0..1" />
+    <End Role="MstMenuRoleMaster" Type="ImageDataDBModel.Store.MstMenuRoleMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Roles">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="MstMenuRoleMaster">
+        <PropertyRef Name="AR_RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblMstUserLoginDetail_tblMstUserMaster">
+    <End Role="tblMstUserMaster" Type="ImageDataDBModel.Store.tblMstUserMaster" Multiplicity="0..1" />
+    <End Role="tblMstUserLoginDetail" Type="ImageDataDBModel.Store.tblMstUserLoginDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblMstUserMaster">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tblMstUserLoginDetail">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblMstUserMaster_MstLanguage">
+    <End Role="MstLanguage" Type="ImageDataDBModel.Store.MstLanguage" Multiplicity="0..1" />
+    <End Role="tblMstUserMaster" Type="ImageDataDBModel.Store.tblMstUserMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MstLanguage">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblMstUserMaster">
+        <PropertyRef Name="Language" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="chkLogin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Type" Type="varchar" Mode="In" />
+    <Parameter Name="UserName" Type="varchar" Mode="In" />
+    <Parameter Name="Password" Type="nvarchar" Mode="In" />
+    <Parameter Name="TransactionPwd" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserLoginId" Type="int" Mode="In" />
+    <Parameter Name="OutRes" Type="int" Mode="InOut" />
+    <Parameter Name="UserID" Type="int" Mode="InOut" />
+    <Parameter Name="RoleID" Type="int" Mode="InOut" />
+    <Parameter Name="CultureID" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="USP_ExportDataMaster" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Type" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="FileCode" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="UploadPath" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="UploadBy" Type="int" Mode="In" />
+    <Parameter Name="ImageType" Type="int" Mode="In" />
+    <Parameter Name="RecordId" Type="int" Mode="InOut" />
+  </Function>
+</Schema>

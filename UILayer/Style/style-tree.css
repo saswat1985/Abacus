@@ -1,0 +1,214 @@
+/**
+ * YUI 3.5.0 - reset.css (http://developer.yahoo.com/yui/3/cssreset/)
+ * http://cssreset.com
+ * Copyright 2012 Yahoo! Inc. All rights reserved.
+ * http://yuilibrary.com/license/
+ */
+/*
+	TODO will need to remove settings on HTML since we can't namespace it.
+	TODO with the prefix, should I group by selector or property for weight savings?
+*/
+html{
+	color:#000;
+	background:#FFF;
+}
+/*
+	TODO remove settings on BODY since we can't namespace it.
+*/
+/*
+	TODO test putting a class on HEAD.
+		- Fails on FF. 
+*/
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+	margin:0;
+	padding:0;
+    }
+table {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+fieldset,
+img {
+	border:0;
+}
+/*
+	TODO think about hanlding inheritence differently, maybe letting IE6 fail a bit...
+*/
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var {
+	font-style:normal;
+	font-weight:normal;
+}
+ 
+ol,
+ul {
+	list-style:none;
+}
+ 
+caption,
+th {
+	text-align:left;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size:100%;
+	font-weight:normal;
+}
+q:before,
+q:after {
+	content:'';
+}
+abbr,
+acronym {
+	border:0;
+	font-variant:normal;
+}
+/* to preserve line-height and selector appearance */
+sup {
+	vertical-align:text-top;
+}
+sub {
+	vertical-align:text-bottom;
+}
+input,
+textarea,
+select {
+	font-family:inherit;
+	font-size:inherit;
+	font-weight:inherit;
+}
+/*to enable resizing for IE*/
+input,
+textarea,
+select {
+	*font-size:100%;
+}
+/*because legend doesn't inherit in IE */
+legend {
+	color:#000;
+}
+/* YUI CSS Detection Stamp */
+#yui3-css-stamp.cssreset { display: none; }
+/* Custom css for tree*/
+.main-container{ margin:20px auto; }
+.container{ margin:0 auto; }
+.width90{ width:900px}
+.bg-grey{ background:#fff;}
+.width100{ width:100%}
+.one-fourth{ width:25%; float:left}
+.text-center{ text-align:center}
+.pull-left{ float:left}
+.pull-right{ float:right}
+.one-half{ width:50%}
+.one-third{ width:33.3333%}
+.box-border-left{-webkit-box-sizing:border-box;-moz-box-sizing:border-box; -o-box-sizing:border-box; -ms-box-sizing:border-box; box-sizing:border-box; border-left:2px solid #444; }
+.box-border-right{-webkit-box-sizing:border-box;-moz-box-sizing:border-box; -o-box-sizing:border-box; -ms-box-sizing:border-box; box-sizing:border-box;  border-right:2px solid #444;}
+.box-border-top{-webkit-box-sizing:border-box;-moz-box-sizing:border-box; -o-box-sizing:border-box; -ms-box-sizing:border-box; box-sizing:border-box;  border-top:2px solid #444}
+.box-border-bottom{-webkit-box-sizing:border-box;-moz-box-sizing:border-box; -o-box-sizing:border-box; -ms-box-sizing:border-box; box-sizing:border-box;  border-bottom:2px solid #444}
+.height20{ height:20px}
+.NoMargin{ margin: 0 auto}
+.Font-Tree{ font-size:12px; font-family:Arial; color:#454545}
+
+/*style for tooltip*/
+.HoverText, .SimpleText{
+    display:block
+}
+.SimpleText span{
+    color:#444; 
+    font-family:Arial;
+    font-size:12px;
+    cursor:pointer;
+}
+.HoverText{
+    border: 3px solid #0C9B95;
+    /*margin: -170px 25px;*/
+	margin:-191px -5px;
+    padding: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background: #0C9B95;
+    color:#fcfcfc;
+    font-size:12px;
+    /* display:none; */
+    position: absolute;
+    width:auto;
+	text-align:left;
+}
+.SimpleText:hover .HoverText{display:block }
+.Triangle{
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 10px 10px 0 10px;
+    border-color: #0DA19B transparent transparent transparent;
+    margin-top: 12px;
+    margin-left: 10px;
+    position: absolute;
+    
+}
+ul.tree-details li { list-style:none; padding-left:0px;}
+ul.tree-details li span{ color:#fff}
+.bold{ font-weight:bold}
+
+/**** for tooltip****/
+div#dvi1{ margin:auto; width:13%}
+div#dvi1 #dvTooltip .HoverText, div#dvi2 #dvTooltip .HoverText,
+div#dvi3 #dvTooltip .HoverText,
+div#dvi4 #dvTooltip .HoverText,
+div#dvi5 #dvTooltip .HoverText{ margin-top:-190px; margin-left:25px}
+
+/***for second level***/
+div#dvi2, div#dvi3, div#dvi4, div#dvi5 { margin:auto; width:52%}
+
+div#dvi5 #dvTooltip .HoverText{ margin-left:-45px}
+div#dvi5 #dvTooltip .HoverText .Triangle { margin-left:80px}
+
+/***for third row***/
+div#dvi19 #dvTooltip .HoverText, div#dvi20 #dvTooltip .HoverText,
+div#dvi21 #dvTooltip .HoverText{ margin-left:-168px}
+div#dvi19 #dvTooltip .HoverText .Triangle , div#dvi20 #dvTooltip .HoverText .Triangle ,
+div#dvi21 #dvTooltip .HoverText .Triangle { margin-left:174px}
+
+
+
+
+
+
+
+
+

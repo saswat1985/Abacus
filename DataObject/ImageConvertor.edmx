@@ -1,0 +1,889 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ImageDataDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="ImageDataDBModelStoreContainer">
+          <EntitySet Name="aspnet_Roles" EntityType="ImageDataDBModel.Store.aspnet_Roles" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="aspnet_UsersInRoles" EntityType="ImageDataDBModel.Store.aspnet_UsersInRoles" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ExportDataDetail" EntityType="ImageDataDBModel.Store.ExportDataDetail" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ExportDataMaster" EntityType="ImageDataDBModel.Store.ExportDataMaster" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ExportToImage" EntityType="ImageDataDBModel.Store.ExportToImage" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MstLanguage" EntityType="ImageDataDBModel.Store.MstLanguage" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MstMenuMaster" EntityType="ImageDataDBModel.Store.MstMenuMaster" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MstMenuRoleMaster" EntityType="ImageDataDBModel.Store.MstMenuRoleMaster" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblIPMaster" EntityType="ImageDataDBModel.Store.tblIPMaster" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblMstUserDetail" EntityType="ImageDataDBModel.Store.tblMstUserDetail" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblMstUserLoginDetail" EntityType="ImageDataDBModel.Store.tblMstUserLoginDetail" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblMstUserMaster" EntityType="ImageDataDBModel.Store.tblMstUserMaster" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_aspnet_UsersInRoles_aspnet_Roles" Association="ImageDataDBModel.Store.FK_aspnet_UsersInRoles_aspnet_Roles">
+            <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+            <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_aspnet_UsersInRoles_tblMstUserMaster" Association="ImageDataDBModel.Store.FK_aspnet_UsersInRoles_tblMstUserMaster">
+            <End Role="tblMstUserMaster" EntitySet="tblMstUserMaster" />
+            <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MstMenuRoleMaster_aspnet_Roles" Association="ImageDataDBModel.Store.FK_MstMenuRoleMaster_aspnet_Roles">
+            <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+            <End Role="MstMenuRoleMaster" EntitySet="MstMenuRoleMaster" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblMstUserLoginDetail_tblMstUserMaster" Association="ImageDataDBModel.Store.FK_tblMstUserLoginDetail_tblMstUserMaster">
+            <End Role="tblMstUserMaster" EntitySet="tblMstUserMaster" />
+            <End Role="tblMstUserLoginDetail" EntitySet="tblMstUserLoginDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblMstUserMaster_MstLanguage" Association="ImageDataDBModel.Store.FK_tblMstUserMaster_MstLanguage">
+            <End Role="MstLanguage" EntitySet="MstLanguage" />
+            <End Role="tblMstUserMaster" EntitySet="tblMstUserMaster" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="aspnet_Roles">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="RoleId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RoleName" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="Description" Type="nvarchar" MaxLength="256" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="UserEntryID" Type="int" />
+          <Property Name="UserEntryDate" Type="datetime" />
+          <Property Name="UserAffectedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="aspnet_UsersInRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="PkID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="RoleId" Type="int" Nullable="false" />
+          <Property Name="UserEntryID" Type="int" />
+          <Property Name="UserEntryDate" Type="datetime" />
+          <Property Name="UserEffectedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ExportDataDetail">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="masterId" Type="int" />
+          <Property Name="recordnumber" Type="int" />
+          <Property Name="customername" Type="nvarchar(max)" />
+          <Property Name="email" Type="nvarchar(max)" />
+          <Property Name="resaddress" Type="nvarchar(max)" />
+          <Property Name="city1" Type="nvarchar(max)" />
+          <Property Name="state1" Type="nvarchar(max)" />
+          <Property Name="zip1" Type="nvarchar(max)" />
+          <Property Name="phonenumber1" Type="nvarchar(max)" />
+          <Property Name="country1" Type="nvarchar(max)" />
+          <Property Name="UPPER" Type="nvarchar(max)" />
+          <Property Name="sex1" Type="nvarchar(max)" />
+          <Property Name="dbirth1" Type="nvarchar(max)" />
+          <Property Name="height" Type="nvarchar(max)" />
+          <Property Name="weight" Type="nvarchar(max)" />
+          <Property Name="bloodgroup" Type="nvarchar(max)" />
+          <Property Name="billingname" Type="nvarchar(max)" />
+          <Property Name="shippername" Type="nvarchar(max)" />
+          <Property Name="city2" Type="nvarchar(max)" />
+          <Property Name="state2" Type="nvarchar(max)" />
+          <Property Name="zip2" Type="nvarchar(max)" />
+          <Property Name="country2" Type="nvarchar(max)" />
+          <Property Name="LOWER" Type="nvarchar(max)" />
+          <Property Name="phone2" Type="nvarchar(max)" />
+          <Property Name="alcoholic" Type="nvarchar(max)" />
+          <Property Name="smoker" Type="nvarchar(max)" />
+          <Property Name="pastsurg" Type="nvarchar(max)" />
+          <Property Name="diabetic" Type="nvarchar(max)" />
+          <Property Name="allergiesd" Type="nvarchar(max)" />
+          <Property Name="policy" Type="nvarchar(max)" />
+          <Property Name="lifeassure" Type="nvarchar(max)" />
+          <Property Name="pinst" Type="nvarchar(max)" />
+          <Property Name="pholder" Type="nvarchar(max)" />
+          <Property Name="stmname" Type="nvarchar(max)" />
+          <Property Name="stmcode" Type="nvarchar(max)" />
+          <Property Name="dob" Type="nvarchar(max)" />
+          <Property Name="sex2" Type="nvarchar(max)" />
+          <Property Name="cardname" Type="nvarchar(max)" />
+          <Property Name="medicine" Type="nvarchar(max)" />
+          <Property Name="dosage" Type="nvarchar(max)" />
+          <Property Name="tablets" Type="nvarchar(max)" />
+          <Property Name="pillrate" Type="nvarchar(max)" />
+          <Property Name="cost" Type="nvarchar(max)" />
+          <Property Name="shippingcost" Type="nvarchar(max)" />
+          <Property Name="total" Type="nvarchar(max)" />
+          <Property Name="remark" Type="nvarchar(max)" />
+          <Property Name="value1" Type="nvarchar(max)" />
+          <Property Name="value2" Type="nvarchar(max)" />
+          <Property Name="value3" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="ExportDataMaster">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FileCode" Type="nvarchar(max)" />
+          <Property Name="ImageType" Type="int" />
+          <Property Name="UploadDate" Type="datetime" />
+          <Property Name="UploadBy" Type="int" />
+          <Property Name="UploadPath" Type="nvarchar(max)" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="IsConverted" Type="bit" />
+        </EntityType>
+        <EntityType Name="ExportToImage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RefrenceId" Type="int" />
+          <Property Name="ConvertDate" Type="datetime" />
+          <Property Name="ConvertBy" Type="int" />
+          <Property Name="ConvertFilepath" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="MstLanguage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="LanguageName" Type="nvarchar" MaxLength="100" />
+          <Property Name="LanguageCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="MstMenuMaster">
+          <Key>
+            <PropertyRef Name="MenuId" />
+          </Key>
+          <Property Name="MenuId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="MenuText" Type="varchar" MaxLength="100" />
+          <Property Name="MenuDesc" Type="varchar" MaxLength="100" />
+          <Property Name="NavigateURL" Type="varchar" MaxLength="256" />
+          <Property Name="ParentID" Type="int" />
+          <Property Name="OrderNo" Type="int" />
+          <Property Name="ApplicationID" Type="int" />
+          <Property Name="UserEntryID" Type="int" />
+          <Property Name="UserEntryDate" Type="datetime" />
+          <Property Name="UserAffectedDate" Type="datetime" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="MstMenuRoleMaster">
+          <Key>
+            <PropertyRef Name="MR_SNo" />
+          </Key>
+          <Property Name="MR_SNo" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="MM_MenuId" Type="int" />
+          <Property Name="AR_RoleId" Type="int" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="ModifiedBy" Type="varchar" MaxLength="50" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="Active_Flag" Type="bit" />
+        </EntityType>
+        <EntityType Name="tblIPMaster">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IPAddress" Type="nvarchar" MaxLength="100" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="UserEntryId" Type="int" />
+          <Property Name="UserEntryDate" Type="datetime" />
+          <Property Name="UserEffectedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tblMstUserDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="500" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="500" />
+          <Property Name="EmailId" Type="nvarchar(max)" />
+          <Property Name="ContactNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="IPAllowed" Type="int" />
+          <Property Name="UserEntryDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tblMstUserLoginDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="AuthId" Type="uniqueidentifier" />
+          <Property Name="BrowserType" Type="nvarchar" MaxLength="500" />
+          <Property Name="IPAddress" Type="nvarchar" MaxLength="50" />
+          <Property Name="CityName" Type="nvarchar(max)" />
+          <Property Name="Latitude" Type="nvarchar" MaxLength="50" />
+          <Property Name="Longitude" Type="nvarchar" MaxLength="50" />
+          <Property Name="LoginTime" Type="datetime" />
+          <Property Name="LogoutTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tblMstUserMaster">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserCode" Type="varchar" MaxLength="50" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="100" />
+          <Property Name="Language" Type="int" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="UserEntryId" Type="int" />
+          <Property Name="UserEntryDate" Type="datetime" />
+          <Property Name="UserEffectedDate" Type="datetime" />
+        </EntityType>
+        <Association Name="FK_aspnet_UsersInRoles_aspnet_Roles">
+          <End Role="aspnet_Roles" Type="ImageDataDBModel.Store.aspnet_Roles" Multiplicity="1" />
+          <End Role="aspnet_UsersInRoles" Type="ImageDataDBModel.Store.aspnet_UsersInRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Roles">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="aspnet_UsersInRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_aspnet_UsersInRoles_tblMstUserMaster">
+          <End Role="tblMstUserMaster" Type="ImageDataDBModel.Store.tblMstUserMaster" Multiplicity="1" />
+          <End Role="aspnet_UsersInRoles" Type="ImageDataDBModel.Store.aspnet_UsersInRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblMstUserMaster">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="aspnet_UsersInRoles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MstMenuRoleMaster_aspnet_Roles">
+          <End Role="aspnet_Roles" Type="ImageDataDBModel.Store.aspnet_Roles" Multiplicity="0..1" />
+          <End Role="MstMenuRoleMaster" Type="ImageDataDBModel.Store.MstMenuRoleMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Roles">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="MstMenuRoleMaster">
+              <PropertyRef Name="AR_RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblMstUserLoginDetail_tblMstUserMaster">
+          <End Role="tblMstUserMaster" Type="ImageDataDBModel.Store.tblMstUserMaster" Multiplicity="0..1" />
+          <End Role="tblMstUserLoginDetail" Type="ImageDataDBModel.Store.tblMstUserLoginDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblMstUserMaster">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="tblMstUserLoginDetail">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblMstUserMaster_MstLanguage">
+          <End Role="MstLanguage" Type="ImageDataDBModel.Store.MstLanguage" Multiplicity="0..1" />
+          <End Role="tblMstUserMaster" Type="ImageDataDBModel.Store.tblMstUserMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MstLanguage">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblMstUserMaster">
+              <PropertyRef Name="Language" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="chkLogin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Type" Type="varchar" Mode="In" />
+          <Parameter Name="UserName" Type="varchar" Mode="In" />
+          <Parameter Name="Password" Type="nvarchar" Mode="In" />
+          <Parameter Name="TransactionPwd" Type="nvarchar" Mode="In" />
+          <Parameter Name="UserLoginId" Type="int" Mode="In" />
+          <Parameter Name="OutRes" Type="int" Mode="InOut" />
+          <Parameter Name="UserID" Type="int" Mode="InOut" />
+          <Parameter Name="RoleID" Type="int" Mode="InOut" />
+          <Parameter Name="CultureID" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="USP_ExportDataMaster" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Type" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="FileCode" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="UploadPath" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="UploadBy" Type="int" Mode="In" />
+          <Parameter Name="ImageType" Type="int" Mode="In" />
+          <Parameter Name="RecordId" Type="int" Mode="InOut" />
+        </Function>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ImageDataDBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="ImageDataDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="aspnet_Roles" EntityType="ImageDataDBModel.aspnet_Roles" />
+          <EntitySet Name="aspnet_UsersInRoles" EntityType="ImageDataDBModel.aspnet_UsersInRoles" />
+          <EntitySet Name="ExportToImages" EntityType="ImageDataDBModel.ExportToImage" />
+          <EntitySet Name="MstLanguages" EntityType="ImageDataDBModel.MstLanguage" />
+          <EntitySet Name="MstMenuMasters" EntityType="ImageDataDBModel.MstMenuMaster" />
+          <EntitySet Name="MstMenuRoleMasters" EntityType="ImageDataDBModel.MstMenuRoleMaster" />
+          <EntitySet Name="tblIPMasters" EntityType="ImageDataDBModel.tblIPMaster" />
+          <EntitySet Name="tblMstUserLoginDetails" EntityType="ImageDataDBModel.tblMstUserLoginDetail" />
+          <EntitySet Name="tblMstUserMasters" EntityType="ImageDataDBModel.tblMstUserMaster" />
+          <AssociationSet Name="FK_aspnet_UsersInRoles_aspnet_Roles" Association="ImageDataDBModel.FK_aspnet_UsersInRoles_aspnet_Roles">
+            <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+            <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MstMenuRoleMaster_aspnet_Roles" Association="ImageDataDBModel.FK_MstMenuRoleMaster_aspnet_Roles">
+            <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+            <End Role="MstMenuRoleMaster" EntitySet="MstMenuRoleMasters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_aspnet_UsersInRoles_tblMstUserMaster" Association="ImageDataDBModel.FK_aspnet_UsersInRoles_tblMstUserMaster">
+            <End Role="tblMstUserMaster" EntitySet="tblMstUserMasters" />
+            <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblMstUserMaster_MstLanguage" Association="ImageDataDBModel.FK_tblMstUserMaster_MstLanguage">
+            <End Role="MstLanguage" EntitySet="MstLanguages" />
+            <End Role="tblMstUserMaster" EntitySet="tblMstUserMasters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblMstUserLoginDetail_tblMstUserMaster" Association="ImageDataDBModel.FK_tblMstUserLoginDetail_tblMstUserMaster">
+            <End Role="tblMstUserMaster" EntitySet="tblMstUserMasters" />
+            <End Role="tblMstUserLoginDetail" EntitySet="tblMstUserLoginDetails" />
+          </AssociationSet>
+          <EntitySet Name="tblMstUserDetails" EntityType="ImageDataDBModel.tblMstUserDetail" />
+          <EntitySet Name="ExportDataMasters" EntityType="ImageDataDBModel.ExportDataMaster" />
+          <EntitySet Name="ExportDataDetails" EntityType="ImageDataDBModel.ExportDataDetail" />
+        </EntityContainer>
+        <EntityType Name="aspnet_Roles">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Type="Int32" Name="RoleId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="RoleName" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsActive" />
+          <Property Type="Int32" Name="UserEntryID" />
+          <Property Type="DateTime" Name="UserEntryDate" />
+          <Property Type="DateTime" Name="UserAffectedDate" />
+          <NavigationProperty Name="aspnet_UsersInRoles" Relationship="ImageDataDBModel.FK_aspnet_UsersInRoles_aspnet_Roles" FromRole="aspnet_Roles" ToRole="aspnet_UsersInRoles" />
+          <NavigationProperty Name="MstMenuRoleMasters" Relationship="ImageDataDBModel.FK_MstMenuRoleMaster_aspnet_Roles" FromRole="aspnet_Roles" ToRole="MstMenuRoleMaster" />
+        </EntityType>
+        <EntityType Name="aspnet_UsersInRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Type="Int32" Name="PkID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="UserId" Nullable="false" />
+          <Property Type="Int32" Name="RoleId" Nullable="false" />
+          <Property Type="Int32" Name="UserEntryID" />
+          <Property Type="DateTime" Name="UserEntryDate" />
+          <Property Type="DateTime" Name="UserEffectedDate" />
+          <NavigationProperty Name="aspnet_Roles" Relationship="ImageDataDBModel.FK_aspnet_UsersInRoles_aspnet_Roles" FromRole="aspnet_UsersInRoles" ToRole="aspnet_Roles" />
+          <NavigationProperty Name="tblMstUserMaster" Relationship="ImageDataDBModel.FK_aspnet_UsersInRoles_tblMstUserMaster" FromRole="aspnet_UsersInRoles" ToRole="tblMstUserMaster" />
+        </EntityType>
+        <EntityType Name="ExportToImage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="RefrenceId" />
+          <Property Type="DateTime" Name="ConvertDate" />
+          <Property Type="Int32" Name="ConvertBy" />
+          <Property Type="String" Name="ConvertFilepath" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MstLanguage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="LanguageName" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LanguageCode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsActive" />
+          <NavigationProperty Name="tblMstUserMasters" Relationship="ImageDataDBModel.FK_tblMstUserMaster_MstLanguage" FromRole="MstLanguage" ToRole="tblMstUserMaster" />
+        </EntityType>
+        <EntityType Name="MstMenuMaster">
+          <Key>
+            <PropertyRef Name="MenuId" />
+          </Key>
+          <Property Type="Int32" Name="MenuId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="MenuText" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="MenuDesc" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NavigateURL" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="ParentID" />
+          <Property Type="Int32" Name="OrderNo" />
+          <Property Type="Int32" Name="ApplicationID" />
+          <Property Type="Int32" Name="UserEntryID" />
+          <Property Type="DateTime" Name="UserEntryDate" />
+          <Property Type="DateTime" Name="UserAffectedDate" />
+          <Property Type="Boolean" Name="IsActive" />
+        </EntityType>
+        <EntityType Name="MstMenuRoleMaster">
+          <Key>
+            <PropertyRef Name="MR_SNo" />
+          </Key>
+          <Property Type="Int32" Name="MR_SNo" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="MM_MenuId" />
+          <Property Type="Int32" Name="AR_RoleId" />
+          <Property Type="String" Name="CreatedBy" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CreatedDate" />
+          <Property Type="String" Name="ModifiedBy" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="ModifiedDate" />
+          <Property Type="Boolean" Name="Active_Flag" />
+          <NavigationProperty Name="aspnet_Roles" Relationship="ImageDataDBModel.FK_MstMenuRoleMaster_aspnet_Roles" FromRole="MstMenuRoleMaster" ToRole="aspnet_Roles" />
+        </EntityType>
+        <EntityType Name="tblIPMaster">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="IPAddress" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsActive" />
+          <Property Type="Int32" Name="UserEntryId" />
+          <Property Type="DateTime" Name="UserEntryDate" />
+          <Property Type="DateTime" Name="UserEffectedDate" />
+        </EntityType>
+        <EntityType Name="tblMstUserLoginDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="UserId" />
+          <Property Type="Guid" Name="AuthId" />
+          <Property Type="String" Name="BrowserType" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="IPAddress" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CityName" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Latitude" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Longitude" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="LoginTime" />
+          <Property Type="DateTime" Name="LogoutTime" />
+          <NavigationProperty Name="tblMstUserMaster" Relationship="ImageDataDBModel.FK_tblMstUserLoginDetail_tblMstUserMaster" FromRole="tblMstUserLoginDetail" ToRole="tblMstUserMaster" />
+        </EntityType>
+        <EntityType Name="tblMstUserMaster">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Type="Int32" Name="UserId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="UserCode" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="UserName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Password" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Language" />
+          <Property Type="Boolean" Name="IsActive" />
+          <Property Type="Int32" Name="UserEntryId" />
+          <Property Type="DateTime" Name="UserEntryDate" />
+          <Property Type="DateTime" Name="UserEffectedDate" />
+          <NavigationProperty Name="aspnet_UsersInRoles" Relationship="ImageDataDBModel.FK_aspnet_UsersInRoles_tblMstUserMaster" FromRole="tblMstUserMaster" ToRole="aspnet_UsersInRoles" />
+          <NavigationProperty Name="MstLanguage" Relationship="ImageDataDBModel.FK_tblMstUserMaster_MstLanguage" FromRole="tblMstUserMaster" ToRole="MstLanguage" />
+          <NavigationProperty Name="tblMstUserLoginDetails" Relationship="ImageDataDBModel.FK_tblMstUserLoginDetail_tblMstUserMaster" FromRole="tblMstUserMaster" ToRole="tblMstUserLoginDetail" />
+        </EntityType>
+        <Association Name="FK_aspnet_UsersInRoles_aspnet_Roles">
+          <End Type="ImageDataDBModel.aspnet_Roles" Role="aspnet_Roles" Multiplicity="1" />
+          <End Type="ImageDataDBModel.aspnet_UsersInRoles" Role="aspnet_UsersInRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Roles">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="aspnet_UsersInRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MstMenuRoleMaster_aspnet_Roles">
+          <End Type="ImageDataDBModel.aspnet_Roles" Role="aspnet_Roles" Multiplicity="0..1" />
+          <End Type="ImageDataDBModel.MstMenuRoleMaster" Role="MstMenuRoleMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Roles">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="MstMenuRoleMaster">
+              <PropertyRef Name="AR_RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_aspnet_UsersInRoles_tblMstUserMaster">
+          <End Type="ImageDataDBModel.tblMstUserMaster" Role="tblMstUserMaster" Multiplicity="1" />
+          <End Type="ImageDataDBModel.aspnet_UsersInRoles" Role="aspnet_UsersInRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblMstUserMaster">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="aspnet_UsersInRoles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblMstUserMaster_MstLanguage">
+          <End Type="ImageDataDBModel.MstLanguage" Role="MstLanguage" Multiplicity="0..1" />
+          <End Type="ImageDataDBModel.tblMstUserMaster" Role="tblMstUserMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MstLanguage">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblMstUserMaster">
+              <PropertyRef Name="Language" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblMstUserLoginDetail_tblMstUserMaster">
+          <End Type="ImageDataDBModel.tblMstUserMaster" Role="tblMstUserMaster" Multiplicity="0..1" />
+          <End Type="ImageDataDBModel.tblMstUserLoginDetail" Role="tblMstUserLoginDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblMstUserMaster">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="tblMstUserLoginDetail">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="tblMstUserDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="UserId" />
+          <Property Type="String" Name="FirstName" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LastName" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="EmailId" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ContactNo" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="IPAllowed" />
+          <Property Type="DateTime" Name="UserEntryDate" />
+        </EntityType>
+        <EntityType Name="ExportDataMaster">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="FileCode" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="ImageType" />
+          <Property Type="DateTime" Name="UploadDate" />
+          <Property Type="Int32" Name="UploadBy" />
+          <Property Type="String" Name="UploadPath" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsActive" />
+          <Property Type="Boolean" Name="IsConverted" />
+        </EntityType>
+        <EntityType Name="ExportDataDetail">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="masterId" />
+          <Property Type="Int32" Name="recordnumber" />
+          <Property Type="String" Name="customername" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="email" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="resaddress" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="city1" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="state1" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="zip1" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="phonenumber1" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="country1" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="UPPER" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="sex1" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="dbirth1" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="height" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="weight" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="bloodgroup" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="billingname" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="shippername" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="city2" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="state2" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="zip2" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="country2" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LOWER" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="phone2" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="alcoholic" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="smoker" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="pastsurg" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="diabetic" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="allergiesd" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="policy" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="lifeassure" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="pinst" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="pholder" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="stmname" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="stmcode" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="dob" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="sex2" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="cardname" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="medicine" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="dosage" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="tablets" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="pillrate" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="cost" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="shippingcost" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="total" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="remark" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="value1" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="value2" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="value3" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ImageDataDBModelStoreContainer" CdmEntityContainer="ImageDataDBEntities">
+          <EntitySetMapping Name="aspnet_Roles">
+            <EntityTypeMapping TypeName="ImageDataDBModel.aspnet_Roles">
+              <MappingFragment StoreEntitySet="aspnet_Roles">
+                <ScalarProperty Name="UserAffectedDate" ColumnName="UserAffectedDate" />
+                <ScalarProperty Name="UserEntryDate" ColumnName="UserEntryDate" />
+                <ScalarProperty Name="UserEntryID" ColumnName="UserEntryID" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="aspnet_UsersInRoles">
+            <EntityTypeMapping TypeName="ImageDataDBModel.aspnet_UsersInRoles">
+              <MappingFragment StoreEntitySet="aspnet_UsersInRoles">
+                <ScalarProperty Name="UserEffectedDate" ColumnName="UserEffectedDate" />
+                <ScalarProperty Name="UserEntryDate" ColumnName="UserEntryDate" />
+                <ScalarProperty Name="UserEntryID" ColumnName="UserEntryID" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="PkID" ColumnName="PkID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ExportToImages">
+            <EntityTypeMapping TypeName="ImageDataDBModel.ExportToImage">
+              <MappingFragment StoreEntitySet="ExportToImage">
+                <ScalarProperty Name="ConvertFilepath" ColumnName="ConvertFilepath" />
+                <ScalarProperty Name="ConvertBy" ColumnName="ConvertBy" />
+                <ScalarProperty Name="ConvertDate" ColumnName="ConvertDate" />
+                <ScalarProperty Name="RefrenceId" ColumnName="RefrenceId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MstLanguages">
+            <EntityTypeMapping TypeName="ImageDataDBModel.MstLanguage">
+              <MappingFragment StoreEntitySet="MstLanguage">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="LanguageCode" ColumnName="LanguageCode" />
+                <ScalarProperty Name="LanguageName" ColumnName="LanguageName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MstMenuMasters">
+            <EntityTypeMapping TypeName="ImageDataDBModel.MstMenuMaster">
+              <MappingFragment StoreEntitySet="MstMenuMaster">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="UserAffectedDate" ColumnName="UserAffectedDate" />
+                <ScalarProperty Name="UserEntryDate" ColumnName="UserEntryDate" />
+                <ScalarProperty Name="UserEntryID" ColumnName="UserEntryID" />
+                <ScalarProperty Name="ApplicationID" ColumnName="ApplicationID" />
+                <ScalarProperty Name="OrderNo" ColumnName="OrderNo" />
+                <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+                <ScalarProperty Name="NavigateURL" ColumnName="NavigateURL" />
+                <ScalarProperty Name="MenuDesc" ColumnName="MenuDesc" />
+                <ScalarProperty Name="MenuText" ColumnName="MenuText" />
+                <ScalarProperty Name="MenuId" ColumnName="MenuId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MstMenuRoleMasters">
+            <EntityTypeMapping TypeName="ImageDataDBModel.MstMenuRoleMaster">
+              <MappingFragment StoreEntitySet="MstMenuRoleMaster">
+                <ScalarProperty Name="Active_Flag" ColumnName="Active_Flag" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="AR_RoleId" ColumnName="AR_RoleId" />
+                <ScalarProperty Name="MM_MenuId" ColumnName="MM_MenuId" />
+                <ScalarProperty Name="MR_SNo" ColumnName="MR_SNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblIPMasters">
+            <EntityTypeMapping TypeName="ImageDataDBModel.tblIPMaster">
+              <MappingFragment StoreEntitySet="tblIPMaster">
+                <ScalarProperty Name="UserEffectedDate" ColumnName="UserEffectedDate" />
+                <ScalarProperty Name="UserEntryDate" ColumnName="UserEntryDate" />
+                <ScalarProperty Name="UserEntryId" ColumnName="UserEntryId" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblMstUserLoginDetails">
+            <EntityTypeMapping TypeName="ImageDataDBModel.tblMstUserLoginDetail">
+              <MappingFragment StoreEntitySet="tblMstUserLoginDetail">
+                <ScalarProperty Name="LogoutTime" ColumnName="LogoutTime" />
+                <ScalarProperty Name="LoginTime" ColumnName="LoginTime" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="CityName" ColumnName="CityName" />
+                <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+                <ScalarProperty Name="BrowserType" ColumnName="BrowserType" />
+                <ScalarProperty Name="AuthId" ColumnName="AuthId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblMstUserMasters">
+            <EntityTypeMapping TypeName="ImageDataDBModel.tblMstUserMaster">
+              <MappingFragment StoreEntitySet="tblMstUserMaster">
+                <ScalarProperty Name="UserEffectedDate" ColumnName="UserEffectedDate" />
+                <ScalarProperty Name="UserEntryDate" ColumnName="UserEntryDate" />
+                <ScalarProperty Name="UserEntryId" ColumnName="UserEntryId" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Language" ColumnName="Language" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserCode" ColumnName="UserCode" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblMstUserDetails">
+            <EntityTypeMapping TypeName="ImageDataDBModel.tblMstUserDetail">
+              <MappingFragment StoreEntitySet="tblMstUserDetail">
+                <ScalarProperty Name="UserEntryDate" ColumnName="UserEntryDate" />
+                <ScalarProperty Name="IPAllowed" ColumnName="IPAllowed" />
+                <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+                <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ExportDataMasters">
+            <EntityTypeMapping TypeName="ImageDataDBModel.ExportDataMaster">
+              <MappingFragment StoreEntitySet="ExportDataMaster">
+                <ScalarProperty Name="IsConverted" ColumnName="IsConverted" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="UploadPath" ColumnName="UploadPath" />
+                <ScalarProperty Name="UploadBy" ColumnName="UploadBy" />
+                <ScalarProperty Name="UploadDate" ColumnName="UploadDate" />
+                <ScalarProperty Name="ImageType" ColumnName="ImageType" />
+                <ScalarProperty Name="FileCode" ColumnName="FileCode" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ExportDataDetails">
+            <EntityTypeMapping TypeName="ImageDataDBModel.ExportDataDetail">
+              <MappingFragment StoreEntitySet="ExportDataDetail">
+                <ScalarProperty Name="value3" ColumnName="value3" />
+                <ScalarProperty Name="value2" ColumnName="value2" />
+                <ScalarProperty Name="value1" ColumnName="value1" />
+                <ScalarProperty Name="remark" ColumnName="remark" />
+                <ScalarProperty Name="total" ColumnName="total" />
+                <ScalarProperty Name="shippingcost" ColumnName="shippingcost" />
+                <ScalarProperty Name="cost" ColumnName="cost" />
+                <ScalarProperty Name="pillrate" ColumnName="pillrate" />
+                <ScalarProperty Name="tablets" ColumnName="tablets" />
+                <ScalarProperty Name="dosage" ColumnName="dosage" />
+                <ScalarProperty Name="medicine" ColumnName="medicine" />
+                <ScalarProperty Name="cardname" ColumnName="cardname" />
+                <ScalarProperty Name="sex2" ColumnName="sex2" />
+                <ScalarProperty Name="dob" ColumnName="dob" />
+                <ScalarProperty Name="stmcode" ColumnName="stmcode" />
+                <ScalarProperty Name="stmname" ColumnName="stmname" />
+                <ScalarProperty Name="pholder" ColumnName="pholder" />
+                <ScalarProperty Name="pinst" ColumnName="pinst" />
+                <ScalarProperty Name="lifeassure" ColumnName="lifeassure" />
+                <ScalarProperty Name="policy" ColumnName="policy" />
+                <ScalarProperty Name="allergiesd" ColumnName="allergiesd" />
+                <ScalarProperty Name="diabetic" ColumnName="diabetic" />
+                <ScalarProperty Name="pastsurg" ColumnName="pastsurg" />
+                <ScalarProperty Name="smoker" ColumnName="smoker" />
+                <ScalarProperty Name="alcoholic" ColumnName="alcoholic" />
+                <ScalarProperty Name="phone2" ColumnName="phone2" />
+                <ScalarProperty Name="LOWER" ColumnName="LOWER" />
+                <ScalarProperty Name="country2" ColumnName="country2" />
+                <ScalarProperty Name="zip2" ColumnName="zip2" />
+                <ScalarProperty Name="state2" ColumnName="state2" />
+                <ScalarProperty Name="city2" ColumnName="city2" />
+                <ScalarProperty Name="shippername" ColumnName="shippername" />
+                <ScalarProperty Name="billingname" ColumnName="billingname" />
+                <ScalarProperty Name="bloodgroup" ColumnName="bloodgroup" />
+                <ScalarProperty Name="weight" ColumnName="weight" />
+                <ScalarProperty Name="height" ColumnName="height" />
+                <ScalarProperty Name="dbirth1" ColumnName="dbirth1" />
+                <ScalarProperty Name="sex1" ColumnName="sex1" />
+                <ScalarProperty Name="UPPER" ColumnName="UPPER" />
+                <ScalarProperty Name="country1" ColumnName="country1" />
+                <ScalarProperty Name="phonenumber1" ColumnName="phonenumber1" />
+                <ScalarProperty Name="zip1" ColumnName="zip1" />
+                <ScalarProperty Name="state1" ColumnName="state1" />
+                <ScalarProperty Name="city1" ColumnName="city1" />
+                <ScalarProperty Name="resaddress" ColumnName="resaddress" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="customername" ColumnName="customername" />
+                <ScalarProperty Name="recordnumber" ColumnName="recordnumber" />
+                <ScalarProperty Name="masterId" ColumnName="masterId" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="ImageConvertor" ZoomLevel="91">
+        <EntityTypeShape EntityType="ImageDataDBModel.aspnet_Roles" Width="1.5" PointX="3" PointY="0.75" Height="2.749492187499996" />
+        <EntityTypeShape EntityType="ImageDataDBModel.aspnet_UsersInRoles" Width="1.5" PointX="5.25" PointY="3.875" Height="2.5571907552083388" />
+        <EntityTypeShape EntityType="ImageDataDBModel.ExportToImage" Width="1.5" PointX="9.75" PointY="2.5" Height="1.9802864583333388" />
+        <EntityTypeShape EntityType="ImageDataDBModel.MstLanguage" Width="1.5" PointX="0.75" PointY="5.125" Height="1.9802864583333388" />
+        <EntityTypeShape EntityType="ImageDataDBModel.MstMenuMaster" Width="1.5" PointX="9.75" PointY="5.5" Height="3.1340950520833397" />
+        <EntityTypeShape EntityType="ImageDataDBModel.MstMenuRoleMaster" Width="1.5" PointX="5.25" PointY="12.625" Height="2.7494921875000031" />
+        <EntityTypeShape EntityType="ImageDataDBModel.tblIPMaster" Width="1.5" PointX="9.75" PointY="9.5" Height="2.1725878906250031" />
+        <EntityTypeShape EntityType="ImageDataDBModel.tblMstUserLoginDetail" Width="1.5" PointX="5.25" PointY="7.875" Height="3.1340950520833246" />
+        <EntityTypeShape EntityType="ImageDataDBModel.tblMstUserMaster" Width="1.5" PointX="3" PointY="4.5" Height="3.3263964843750102" />
+        <AssociationConnector Association="ImageDataDBModel.FK_aspnet_UsersInRoles_aspnet_Roles" >
+          <ConnectorPoint PointX="4.5" PointY="2.124746093749998" />
+          <ConnectorPoint PointX="6" PointY="2.124746093749998" />
+          <ConnectorPoint PointX="6" PointY="3.875" />
+        </AssociationConnector>
+        <AssociationConnector Association="ImageDataDBModel.FK_MstMenuRoleMaster_aspnet_Roles" >
+          <ConnectorPoint PointX="4.5" PointY="3.499492187499996" />
+          <ConnectorPoint PointX="4.875" PointY="3.874492187499996" />
+          <ConnectorPoint PointX="4.875" PointY="13.999746093750002" />
+          <ConnectorPoint PointX="5.25" PointY="13.999746093750002" />
+        </AssociationConnector>
+        <AssociationConnector Association="ImageDataDBModel.FK_aspnet_UsersInRoles_tblMstUserMaster" >
+          <ConnectorPoint PointX="4.5" PointY="5.4660953776041694" />
+          <ConnectorPoint PointX="4.791666666666667" PointY="5.4660953776041685" />
+          <ConnectorPoint PointX="4.958333333333333" PointY="5.4660953776041694" />
+          <ConnectorPoint PointX="5.25" PointY="5.4660953776041694" />
+        </AssociationConnector>
+        <AssociationConnector Association="ImageDataDBModel.FK_tblMstUserMaster_MstLanguage" >
+          <ConnectorPoint PointX="2.25" PointY="6.1151432291666694" />
+          <ConnectorPoint PointX="3" PointY="6.1151432291666694" />
+        </AssociationConnector>
+        <AssociationConnector Association="ImageDataDBModel.FK_tblMstUserLoginDetail_tblMstUserMaster" >
+          <ConnectorPoint PointX="3.84375" PointY="7.82639648437501" />
+          <ConnectorPoint PointX="3.84375" PointY="8.65625" />
+          <ConnectorPoint PointX="4.791666666666667" PointY="8.65625" />
+          <ConnectorPoint PointX="4.958333333333333" PointY="8.65625" />
+          <ConnectorPoint PointX="5.25" PointY="8.65625" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="ImageDataDBModel.tblMstUserDetail" Width="1.5" PointX="12.375" PointY="0.75" Height="2.5571907552083388" />
+        <EntityTypeShape EntityType="ImageDataDBModel.ExportDataMaster" Width="1.5" PointX="0.75" PointY="8.75" Height="2.5571907552083388" />
+        <EntityTypeShape EntityType="ImageDataDBModel.ExportDataDetail" Width="1.5" PointX="0.75" PointY="12.75" Height="10.633850911458332" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

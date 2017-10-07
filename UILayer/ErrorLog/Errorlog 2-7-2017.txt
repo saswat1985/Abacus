@@ -1,0 +1,13 @@
+02-07-2017 12:34:35
+   at DataObject.BulkDataUpload.SqlBulkDataCopyMaster(DataTable dtData, MstExportData objMasterdata) in D:\Aakash\ImageConvertor\DataObject\BulkDataUpload.cs:line 129
+   at Default.btnUpload_Click(Object sender, EventArgs e) in d:\Aakash\ImageConvertor\UILayer\Default.aspx.cs:line 73--->The formal parameter "@UploadPath" was not declared as an OUTPUT parameter, but the actual parameter passed in requested output.
+02-07-2017 13:36:54
+   at System.Web.UI.PageRequestManager.RegisterPostBackControl(Control control)
+   at System.Web.UI.ScriptManager.RegisterPostBackControl(Control control)
+   at Default.grdvConvertImageData_RowDataBound(Object sender, GridViewRowEventArgs e) in d:\Aakash\ImageConvertor\UILayer\Default.aspx.cs:line 147--->Value cannot be null.
+Parameter name: control
+02-07-2017 13:38:00
+   at System.Web.UI.PageRequestManager.RegisterPostBackControl(Control control)
+   at System.Web.UI.ScriptManager.RegisterPostBackControl(Control control)
+   at Default.grdvConvertImageData_RowDataBound(Object sender, GridViewRowEventArgs e) in d:\Aakash\ImageConvertor\UILayer\Default.aspx.cs:line 147--->Value cannot be null.
+Parameter name: control
