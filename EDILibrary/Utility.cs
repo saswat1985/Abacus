@@ -93,15 +93,15 @@ namespace EDIConvertorExecutable
             try
             {
                 StringBuilder htmlString = new StringBuilder();
-                htmlString.Append("<div style='padding-right:50px;'>");
-                htmlString.Append("<table style='width: 40%; font-family: " + AppKeyCollection.FontStyle + ";font-size: " + AppKeyCollection.FontSize + "px; margin-top: 17px;margin-bottom: 10px;'>");
+               // htmlString.Append("<div style='padding-right:50px;'>");
+                htmlString.Append("<table style='width: 1600px; font-family: " + AppKeyCollection.FontStyle + ";font-size: " + AppKeyCollection.FontSize + "px; margin-top: 17px;margin-bottom: 10px;table-layout: fixed;'>");
                 for (int i = 0; i < dtrecord.Rows.Count; i++)
                 {
                     if (i % 2 == 0)
                     {
                         htmlString.Append("<tr>");
                     }
-                    htmlString.Append("<td width='30px;' style='border-style: solid; border-width: thick;border-color: black;padding-left: 20px;padding-right: 20px;'>");
+                    htmlString.Append("<td style='width:750px;border-style: solid; border-width: thick;border-color: black;padding-left: 10px;padding-right: 10px;word-wrap:break-word;'>");
                     for (int j = 0; j < dtrecord.Columns.Count; j++)
                     {
                         if (!string.IsNullOrEmpty(dtrecord.Rows[i][j].TrimString()))
@@ -119,7 +119,7 @@ namespace EDIConvertorExecutable
 
                 }
                 htmlString.Append("</table>");
-                htmlString.Append("</div>");
+                //htmlString.Append("</div>");
                 return htmlString.TrimString();
             }
             catch (Exception ex)
@@ -183,7 +183,7 @@ namespace EDIConvertorExecutable
                 float height = 2750.0F;
                 SizeF size = new SizeF(width, height);
 
-                Image imgReturn = TheArtOfDev.HtmlRenderer.WinForms.HtmlRender.RenderToImage(htmltext, new Size(1600, 1650), Color.White);
+                Image imgReturn = TheArtOfDev.HtmlRenderer.WinForms.HtmlRender.RenderToImage(htmltext, new Size(1950, 1650), Color.White);
                 //Image imgReturn = TheArtOfDev.HtmlRenderer.WinForms.HtmlRender.RenderToImage(htmltext, pointf,size,null);
 
                 return imgReturn;

@@ -1,26 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.IO;
-using System.Data.OleDb;
 using System.Data;
 using DataObject;
 using EntityRefObject;
-using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Drawing.Text;
-using System.Drawing.Imaging;
 using Uitlity;
 
 
 public partial class Default : BasePage
 {
     DataTable dt = null;
-    MstExportData objMaster = null;
-    DataObject.ExportToImage objConvertImage = null;
+    MstExportData objMaster = null;    
     BulkDataUpload objDataUpload = null;
     protected void Page_Load(object sender, EventArgs e)
     {
